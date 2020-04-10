@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="member-card">
+        {% set member = members['members']|random() %}
+        <h2>{{ member['name'] }}</h2>
+        <img src={{ member['photo'] }} alt="Not found" width="500" height="550">
+        <p>{{ member['profs']|sort()|join(', ') }}</p>
+    </div>
+{% endblock %}
